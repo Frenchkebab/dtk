@@ -45,7 +45,7 @@ def clickClaim(driver):
 
 def memo(file_name, row, msg):
     # 엑셀 파일 오픈
-    wb = openpyxl.load_workbook(f"./upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
 
     # 시트 설정
     sheet = wb.worksheets[0]
@@ -57,7 +57,7 @@ def memo(file_name, row, msg):
         sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
 
     # 파일 저장 후 닫기
-    wb.save(f"./upload/{file_name}")
+    wb.save(f"./UserFiles/upload/{file_name}")
     wb.close()
 
 def writeLog(logFile, msg):
@@ -362,7 +362,7 @@ def uploadedFileNumCheck(driver):
 def memo(file_name, row, msg, archiveError=False):
 
     # 엑셀 파일 오픈
-    wb = openpyxl.load_workbook(f"./upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
 
     # 시트 설정
     sheet = wb.worksheets[0]
@@ -383,7 +383,7 @@ def memo(file_name, row, msg, archiveError=False):
         sheet.cell(row = 5 + int(row["No."]), column = 25).value = "Upload Error"
 
     # 파일 저장 후 닫기
-    wb.save(f"./upload/{file_name}")
+    wb.save(f"./UserFiles/upload/{file_name}")
     wb.close()
 
 def writeLog(logFile, msg):
@@ -458,7 +458,7 @@ def getCid(file_name, driver, row):
     cid = line[-7:]
 
     # 엑셀 파일 오픈
-    wb = openpyxl.load_workbook(f"./upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
 
     # 시트 설정
     sheet = wb.worksheets[0]
@@ -467,7 +467,7 @@ def getCid(file_name, driver, row):
     sheet.cell(row = 5 + int(row["No."]), column = 23).value = cid
 
     # 파일 저장 후 닫기
-    wb.save(f"./upload/{file_name}")
+    wb.save(f"./UserFiles/upload/{file_name}")
     wb.close()
 
 def uploadArchive(driver,logFile, fileList, selectionList):

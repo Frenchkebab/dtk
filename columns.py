@@ -19,8 +19,7 @@ column = {
     '18': 'Sub Total',
     '19': 'Date of booking',
     '20': 'Reclamation date',
-    '21': 'Audit type',
-    '22': 'Claim Entry ID-Number',
-    '23': 'CID',
-    '24': 'Memo'
+    '21': 'Repair for',
+    '22': 'CID',
+    '23': 'Memo'
 }

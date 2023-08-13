@@ -19,14 +19,14 @@ from glob import glob
 
 def attributeWrite(file_name):
     
-    wb = openpyxl.load_workbook(f"./upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
 
     sheet = wb.worksheets[0]
 
-    for i in range (1, 25):
-        sheet.cell(row = 5, column = i).value = columns.column[f"{i}"]
+    for i in range (1, 24):
+        sheet.cell(row = 1, column = i).value = columns.column[f"{i}"]
 
-    wb.save(f"./upload/{file_name}")
+    wb.save(f"./UserFiles/upload/{file_name}")
     wb.close()
 
 # 엑셀 데이터 입력
@@ -58,8 +58,8 @@ def printUserInput(id, password, work_type, file_name, start_idx, last_idx, minS
     print(f"최대 대기시간(초) : {maxSecond}")
 
 def readXslx(file_name):
-    df = pd.read_excel(f'./upload/{file_name}',
-                                        skiprows=4,
+    df = pd.read_excel(f'./UserFiles/upload/{file_name}',
+                                        # skiprows=4,
                                         na_values='',
                                         dtype = {
                                             "No.": str,

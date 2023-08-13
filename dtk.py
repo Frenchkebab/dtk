@@ -106,32 +106,40 @@ def VehicleLogistics(driver, file_name, row):
         pass
 
     # carrier
-    if doesBLContainMolu("BL", row):
-        carrier = driver.find_element(by=By.NAME, value="field_tuse")
-        carrier.send_keys("mitsui")
-        carrier.send_keys(Keys.ENTER)
-        driver.switch_to.window(driver.window_handles[1])
-        waitLoading()
-        driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr/td[1]/input").send_keys(Keys.ENTER) # '+' 버튼 클릭
-        driver.switch_to.window(driver.window_handles[0])
+    # if doesBLContainMolu("BL", row):
+    #     carrier = driver.find_element(by=By.NAME, value="field_tuse")
+    #     carrier.send_keys("mitsui")
+    #     carrier.send_keys(Keys.ENTER)
+    #     driver.switch_to.window(driver.window_handles[1])
+    #     waitLoading()
+    #     driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr/td[1]/input").send_keys(Keys.ENTER) # '+' 버튼 클릭
+    #     driver.switch_to.window(driver.window_handles[0])
 
-    elif isHyundaiGlovis("BL", row):
-        carrier = driver.find_element(by=By.NAME, value="field_tuse")
-        carrier.send_keys("HYUNDAI GLOVIS")
-        carrier.send_keys(Keys.ENTER)
-        driver.switch_to.window(driver.window_handles[1])
-        waitLoading()
-        driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr/td[1]/input").send_keys(Keys.ENTER) # '+' 버튼 클릭
-        driver.switch_to.window(driver.window_handles[0])
+    # elif isHyundaiGlovis("BL", row):
+    #     carrier = driver.find_element(by=By.NAME, value="field_tuse")
+    #     carrier.send_keys("HYUNDAI GLOVIS")
+    #     carrier.send_keys(Keys.ENTER)
+    #     driver.switch_to.window(driver.window_handles[1])
+    #     waitLoading()
+    #     driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr/td[1]/input").send_keys(Keys.ENTER) # '+' 버튼 클릭
+    #     driver.switch_to.window(driver.window_handles[0])
 
-    else:
-        carrier = driver.find_element(by=By.NAME, value="field_tuse")
-        carrier.send_keys("eukor")
-        carrier.send_keys(Keys.ENTER)
-        driver.switch_to.window(driver.window_handles[1])
-        waitLoading()
-        driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr[2]/td[1]/input").send_keys(Keys.ENTER) # 두 번째 '+' 버튼 클릭
-        driver.switch_to.window(driver.window_handles[0])
+    # else:
+    #     carrier = driver.find_element(by=By.NAME, value="field_tuse")
+    #     carrier.send_keys("eukor")
+    #     carrier.send_keys(Keys.ENTER)
+    #     driver.switch_to.window(driver.window_handles[1])
+    #     waitLoading()
+    #     driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr[2]/td[1]/input").send_keys(Keys.ENTER) # 두 번째 '+' 버튼 클릭
+    #     driver.switch_to.window(driver.window_handles[0])
+    
+    carrier = driver.find_element(by=By.NAME, value="field_tuse")
+    carrier.send_keys("eukor")
+    carrier.send_keys(Keys.ENTER)
+    driver.switch_to.window(driver.window_handles[1])
+    waitLoading()
+    driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr[2]/td[1]/input").send_keys(Keys.ENTER) # 두 번째 '+' 버튼 클릭
+    driver.switch_to.window(driver.window_handles[0])
 
     # reclamation made on
     rYear = row["Reclamation date"][0:4]

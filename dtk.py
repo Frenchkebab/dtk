@@ -10,10 +10,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 import time
-import openpyxl
+# import openpyxl
 
-import pyautogui
-import clipboard
+# import pyautogui
+# import clipboard
 
 from timer import waitLoading
 from inputFunctions import *

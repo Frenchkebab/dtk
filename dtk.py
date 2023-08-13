@@ -210,12 +210,12 @@ def VehicleLogistics(driver, file_name, row):
         Select(driver.find_element(by=By.NAME, value="field_kzvers")).select_by_value("CL09")
     else:
         if(iYear == '2022'):
-            Select(driver.find_element(by=By.NAME, value="field_police")).select_by_value(f"30109636-06154-{iYear}")
+            Select(driver.find_element(by=By.NAME, value="field_police")).select_by_value(f"S-22ZH-DA00001-2022")
         # iYear == 2023
         else:
-            Select(driver.find_element(by=By.NAME, value="field_police")).select_by_value(f"30109636-06305-{iYear}")
+            Select(driver.find_element(by=By.NAME, value="field_police")).select_by_value(f"S23ZHDA00001-2023")
         
-        Select(driver.find_element(by=By.NAME, value="field_kzvers")).select_by_value("CL08")
+        Select(driver.find_element(by=By.NAME, value="field_kzvers")).select_by_value("CL10")
 
     # estimated/amount claimed
     total = row["Sub Total"]

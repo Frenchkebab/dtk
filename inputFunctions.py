@@ -78,12 +78,11 @@ def readXslx(file_name):
                                             "Damage Code07": str,
                                             "Damage Code08": str,
                                             "Damage Code09": str,
-                                            "Damage Code010": str,
+                                            "Damage Code10": str,
                                             "Sub Total": str,
                                             "Date of booking": str,
                                             "Reclamation date": str,
-                                            "Audit type": str,
-                                            "Claim Entry ID-Number": str,
+                                            "Repair for": str,
                                             "CID": str
                                         })
     return df

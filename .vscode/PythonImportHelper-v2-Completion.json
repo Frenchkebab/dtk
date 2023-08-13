@@ -402,7 +402,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def clickClaim(driver):\n    # claim 버튼 클릭\n    driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\ndef memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg",
+        "peekOfCode": "def clickClaim(driver):\n    # claim 버튼 클릭\n    driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\ndef memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg",
         "detail": "common",
         "documentation": {}
     },
@@ -411,7 +411,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:\n        # cid값 저장\n        sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
+        "peekOfCode": "def memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:\n        # cid값 저장\n        sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
         "detail": "common",
         "documentation": {}
     },
@@ -510,7 +510,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def uploadedFileNumCheck(driver):\n    wait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[17]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a'))).click()\n    uploadedFileNum = wait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id=\"mainpart\"]/table[6]/tbody/tr[2]/td[2]'))).get_attribute('innerText').strip()\n    return int(uploadedFileNum)\ndef memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
+        "peekOfCode": "def uploadedFileNumCheck(driver):\n    wait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[17]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a'))).click()\n    uploadedFileNum = wait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id=\"mainpart\"]/table[6]/tbody/tr[2]/td[2]'))).get_attribute('innerText').strip()\n    return int(uploadedFileNum)\ndef memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
         "detail": "common",
         "documentation": {}
     },
@@ -519,7 +519,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg\n    # Memo 작성\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:",
+        "peekOfCode": "def memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg\n    # Memo 작성\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:",
         "detail": "common",
         "documentation": {}
     },
@@ -555,7 +555,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def getCid(file_name, driver, row):\n    # 텍스트 클릭\n    line = driver.find_element(by=By.XPATH, value='//*[@id=\"show_header_reference\"]/table/tbody/tr/td/b').get_attribute('innerText')\n    line = line.strip()\n    # cid 값 변수 저장\n    cid = line[-7:]\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]",
+        "peekOfCode": "def getCid(file_name, driver, row):\n    # 텍스트 클릭\n    line = driver.find_element(by=By.XPATH, value='//*[@id=\"show_header_reference\"]/table/tbody/tr/td/b').get_attribute('innerText')\n    line = line.strip()\n    # cid 값 변수 저장\n    cid = line[-7:]\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]",
         "detail": "common",
         "documentation": {}
     },
@@ -618,7 +618,7 @@
         "kind": 2,
         "importPath": "inputFunctions",
         "description": "inputFunctions",
-        "peekOfCode": "def attributeWrite(file_name):\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    sheet = wb.worksheets[0]\n    for i in range (1, 25):\n        sheet.cell(row = 5, column = i).value = columns.column[f\"{i}\"]\n    wb.save(f\"./upload/{file_name}\")\n    wb.close()\n# 엑셀 데이터 입력\ndef userInput():\n    f = open('./UserFiles/settings/setting.txt', 'r', encoding='utf-8')",
+        "peekOfCode": "def attributeWrite(file_name):\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    sheet = wb.worksheets[0]\n    for i in range (1, 24):\n        sheet.cell(row = 1, column = i).value = columns.column[f\"{i}\"]\n    wb.save(f\"./UserFiles/upload/{file_name}\")\n    wb.close()\n# 엑셀 데이터 입력\ndef userInput():\n    f = open('./UserFiles/settings/setting.txt', 'r', encoding='utf-8')",
         "detail": "inputFunctions",
         "documentation": {}
     },
@@ -645,7 +645,7 @@
         "kind": 2,
         "importPath": "inputFunctions",
         "description": "inputFunctions",
-        "peekOfCode": "def readXslx(file_name):\n    df = pd.read_excel(f'./upload/{file_name}',\n                                        skiprows=4,\n                                        na_values='',\n                                        dtype = {\n                                            \"No.\": str,\n                                            \"Commission No.\": str,\n                                            \"VIN No.\": str,\n                                            \"Repair No.\": str,\n                                            \"B/L no.\": str,",
+        "peekOfCode": "def readXslx(file_name):\n    df = pd.read_excel(f'./UserFiles/upload/{file_name}',\n                                        # skiprows=4,\n                                        na_values='',\n                                        dtype = {\n                                            \"No.\": str,\n                                            \"Commission No.\": str,\n                                            \"VIN No.\": str,\n                                            \"Repair No.\": str,\n                                            \"B/L no.\": str,",
         "detail": "inputFunctions",
         "documentation": {}
     },

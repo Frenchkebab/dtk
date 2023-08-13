@@ -36,8 +36,8 @@ def VehicleLogistics(driver, file_name, row):
             
 
     # client 선택
-    select = Select(driver.find_element(by=By.ID, value="meldfn"))      # Mercedes-Benz Korea Limited
-    select.select_by_value("DCD9")
+    select = Select(driver.find_element(by=By.ID, value="meldfn"))      # (T) Daimler Trucks Korea Ltd.
+    select.select_by_value("GCI4")
     time.sleep(0.5)
 
     # product/type of order 선택

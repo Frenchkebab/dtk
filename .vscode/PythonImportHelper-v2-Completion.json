@@ -1,0 +1,805 @@
+[
+    {
+        "label": "*",
+        "importPath": "timer",
+        "description": "timer",
+        "isExtraImport": true,
+        "detail": "timer",
+        "documentation": {}
+    },
+    {
+        "label": "waitLoading",
+        "importPath": "timer",
+        "description": "timer",
+        "isExtraImport": true,
+        "detail": "timer",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "timer",
+        "description": "timer",
+        "isExtraImport": true,
+        "detail": "timer",
+        "documentation": {}
+    },
+    {
+        "label": "openpyxl",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "Select",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "Select",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "ActionChains",
+        "importPath": "selenium.webdriver",
+        "description": "selenium.webdriver",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver",
+        "documentation": {}
+    },
+    {
+        "label": "ActionChains",
+        "importPath": "selenium.webdriver",
+        "description": "selenium.webdriver",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "randint",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "clipboard",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "clipboard",
+        "description": "clipboard",
+        "detail": "clipboard",
+        "documentation": {}
+    },
+    {
+        "label": "inputFunctions",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "isExtraImport": true,
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "isExtraImport": true,
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "common",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "common",
+        "description": "common",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "columns",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "columns",
+        "description": "columns",
+        "detail": "columns",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "policy",
+        "importPath": "email",
+        "description": "email",
+        "isExtraImport": true,
+        "detail": "email",
+        "documentation": {}
+    },
+    {
+        "label": "BytesParser",
+        "importPath": "email.parser",
+        "description": "email.parser",
+        "isExtraImport": true,
+        "detail": "email.parser",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "importPath": "glob",
+        "description": "glob",
+        "isExtraImport": true,
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "dtk",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dtk",
+        "description": "dtk",
+        "detail": "dtk",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "cx_Freeze",
+        "description": "cx_Freeze",
+        "isExtraImport": true,
+        "detail": "cx_Freeze",
+        "documentation": {}
+    },
+    {
+        "label": "Executable",
+        "importPath": "cx_Freeze",
+        "description": "cx_Freeze",
+        "isExtraImport": true,
+        "detail": "cx_Freeze",
+        "documentation": {}
+    },
+    {
+        "label": "column",
+        "kind": 5,
+        "importPath": "columns",
+        "description": "columns",
+        "peekOfCode": "column = {\n    '1': 'No.',\n    '2': 'Commission No.',\n    '3': 'VIN No.',\n    '4': 'Repair No.',\n    '5': 'B/L no.',\n    '6': 'Closing Date',\n    '7': 'Incident date',\n    '8': 'Damage Code01',\n    '9': 'Damage Code02',",
+        "detail": "columns",
+        "documentation": {}
+    },
+    {
+        "label": "altTab",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def altTab():\n    pyautogui.keyDown('alt')\n    time.sleep(.2)\n    pyautogui.press('tab')\n    time.sleep(.2)\n    pyautogui.keyUp('alt')\ndef toClaimX(driver):\n    driver.get(\"https://www.claimx.de/claimx\")\n    driver.implicitly_wait(60 * 20)\n# def login(driver, id, password):",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "toClaimX",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def toClaimX(driver):\n    driver.get(\"https://www.claimx.de/claimx\")\n    driver.implicitly_wait(60 * 20)\n# def login(driver, id, password):\n#     # id 입력\n#     driver.find_element_by_xpath(\"/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[1]/td[2]/input\").send_keys(id)\n#     time.sleep(0.5)\n#     # password 입력\n#     driver.find_element_by_xpath(\"/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[2]/td[2]/input\").send_keys(password)\n#     # 로그인 버튼 클릭",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "clickClaim",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def clickClaim(driver):\n    # claim 버튼 클릭\n    driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\ndef memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "memo",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:\n        # cid값 저장\n        sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "writeLog",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def writeLog(logFile, msg):\n    logFile.write(f\"{msg}\\n\")\n# from random import random, randint\n#     # policy/type of insurance\n#     Select(driver.find_element_by_name(\"field_police\")).select_by_value(\"30109636-06154-2021\")\n#     Select(driver.find_element_by_name(\"field_kzvers\")).select_by_value(\"CL08\")\n#     # estimated/amount claimed\n#     total = row[\"Sub Total\"]\n#     driver.find_element_by_name(\"field_fordmsw\").send_keys(total)\n#     Select(driver.find_element_by_name(\"field_qmsts\")).select_by_value(\"034\")",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "archive",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def archive(driver, logFile, row):\n    # archive 버튼 클릭\n    driver.find_element_by_link_text(\"archive\").click()\n    waitLoading()\n    # 파일 버튼 클릭\n    driver.find_element_by_xpath('//*[@id=\"mainpart\"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()\n    waitLoading()\n    # 팝업 창으로\n    driver.switch_to.window(driver.window_handles[1])\n    fRO = searchFileName(\"RO\", row)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "claim",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def claim(driver):\n    # 좌측 cliam 클릭\n    driver.find_element_by_xpath(\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # claimant\n    claimant = driver.find_element_by_name(\"field_ansprse\")\n    claimant.send_keys(\"Mercedes-Benz Korea\")\n    time.sleep(0.5)\n    claimant.send_keys(Keys.ENTER)\n    # 팝업 창",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "receipts",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def receipts(driver, row):\n    # 좌측 receipts 버튼 클릭\n    driver.find_element_by_xpath('/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[13]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\n    waitLoading()\n    # new 버튼 클릭\n    driver.find_element_by_xpath('//*[@id=\"mainpart\"]/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/a').click()\n    waitLoading()\n    # type of receipt\n    select = Select(driver.find_element_by_name(\"field_bel\"))\n    select.select_by_value(\"RK\")",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def status(driver):\n    # 좌측 status 버튼 클릭\n    driver.find_element_by_xpath(\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[18]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # status\n    typeOfProcedure = Select(driver.find_element_by_name(\"field_sst\"))\n    typeOfProcedure.select_by_value(\"B\")\n    # submit\n    driver.find_element_by_name(\"Abschicken\").click()\n    waitLoading()",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "altTab",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def altTab():\n    pyautogui.keyDown('alt')\n    time.sleep(.2)\n    pyautogui.press('tab')\n    time.sleep(.2)\n    pyautogui.keyUp('alt')\ndef toClaimX(driver):\n    driver.get(\"https://www.claimx.de/claimx\")\n    driver.implicitly_wait(30)\ndef login(driver, id, password):",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "toClaimX",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def toClaimX(driver):\n    driver.get(\"https://www.claimx.de/claimx\")\n    driver.implicitly_wait(30)\ndef login(driver, id, password):\n    # id 입력\n    idForm = driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[1]/td[2]/input\")\n    idForm.send_keys(id)\n    time.sleep(0.5)\n    # password 입력\n    pwForm = driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[2]/td[2]/input\")",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def login(driver, id, password):\n    # id 입력\n    idForm = driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[1]/td[2]/input\")\n    idForm.send_keys(id)\n    time.sleep(0.5)\n    # password 입력\n    pwForm = driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[2]/td[2]/input\")\n    pwForm.send_keys(password)\n    ## clipboard 사용하여 입력\n    clipboard.copy(id)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "clickClaim",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def clickClaim(driver):\n    # claim 버튼 클릭\n    driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\ndef uploadFileNumCheck(fileList):\n    # fileList에서 파악한 총 파일 개수를 더함\n    fileCount = 0\n    for file in fileList:\n        fileCount += len(file)\n    return fileCount\ndef uploadedFileNumCheck(driver):",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "uploadFileNumCheck",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def uploadFileNumCheck(fileList):\n    # fileList에서 파악한 총 파일 개수를 더함\n    fileCount = 0\n    for file in fileList:\n        fileCount += len(file)\n    return fileCount\ndef uploadedFileNumCheck(driver):\n    wait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[17]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a'))).click()\n    uploadedFileNum = wait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id=\"mainpart\"]/table[6]/tbody/tr[2]/td[2]'))).get_attribute('innerText').strip()\n    return int(uploadedFileNum)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "uploadedFileNumCheck",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def uploadedFileNumCheck(driver):\n    wait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[17]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a'))).click()\n    uploadedFileNum = wait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id=\"mainpart\"]/table[6]/tbody/tr[2]/td[2]'))).get_attribute('innerText').strip()\n    return int(uploadedFileNum)\ndef memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "memo",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg\n    # Memo 작성\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "writeLog",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def writeLog(logFile, msg):\n    logFile.write(f\"{msg}\\n\")\nfrom selenium.webdriver import ActionChains\nfrom selenium.webdriver.common.keys import Keys\nfrom selenium.webdriver.support.ui import Select\nfrom selenium.webdriver.common.by import By\nfrom random import random, randint\nimport time\nimport openpyxl\nimport pyautogui",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "checkCID",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def checkCID(row):\n    # CID가 입력되지 않았으면 \n    if str(row[\"CID\"]) == \"nan\":\n        return False\n    # 이미 CID가 입력되어 있으면\n    else:\n        return True\n# Vehicle Logistics 입력한 경우 query로 찾아가기\ndef query(driver, row):\n    driver.implicitly_wait(3)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "query",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def query(driver, row):\n    driver.implicitly_wait(3)\n    driver.find_element(by=By.LINK_TEXT, value=\"query\").click() # query 버튼 클릭\n    waitLoading()\n    vinForm = driver.find_element(by=By.NAME, value=\"field_akrefitem\")\n    vinForm.clear()\n    time.sleep(0.5)\n    cidForm = driver.find_element(by=By.NAME, value=\"field_aksiditem\")\n    cidForm.clear()\n    time.sleep(1)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "getCid",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def getCid(file_name, driver, row):\n    # 텍스트 클릭\n    line = driver.find_element(by=By.XPATH, value='//*[@id=\"show_header_reference\"]/table/tbody/tr/td/b').get_attribute('innerText')\n    line = line.strip()\n    # cid 값 변수 저장\n    cid = line[-7:]\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "uploadArchive",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def uploadArchive(driver,logFile, fileList, selectionList):\n    div = 1\n    for i in range(0, 7):\n        for file in fileList[i]:\n            writeLog(logFile, file)\n            # file selection 클릭\n            driver.implicitly_wait(5)\n            fileSelection = driver.find_element(by=By.XPATH, value='//*[@id=\"actions\"]/div[1]/span')\n            fileSelection.click()\n            time.sleep(2)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "VehicleLogistics",
+        "kind": 2,
+        "importPath": "dtk",
+        "description": "dtk",
+        "peekOfCode": "def VehicleLogistics(driver, file_name, row):\n    # vehicle-logistics로 이동\n    driver.implicitly_wait(5)\n    driver.find_element(by=By.LINK_TEXT, value=\"vehicle-logistics\").click()\n    # 페이지 로딩 됐는지 검사\n    while True:\n        try: \n            driver.find_element(by=By.ID, value=\"meldfn\")\n            # 있으면 탈출\n            break",
+        "detail": "dtk",
+        "documentation": {}
+    },
+    {
+        "label": "archive",
+        "kind": 2,
+        "importPath": "dtk",
+        "description": "dtk",
+        "peekOfCode": "def archive(driver, logFile, row, archiveError = False):\n    # archive 버튼 클릭\n    driver.find_element(by=By.LINK_TEXT, value=\"archive\").click()\n    waitLoading()\n    # 파일 버튼 클릭\n    # driver.find_element(by=By.XPATH, value='//*[@id=\"mainpart\"]/table[4]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()\n    wait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id=\"mainpart\"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img'))).click()\n    waitLoading()\n    # 팝업 창으로\n    driver.switch_to.window(driver.window_handles[1])",
+        "detail": "dtk",
+        "documentation": {}
+    },
+    {
+        "label": "claim",
+        "kind": 2,
+        "importPath": "dtk",
+        "description": "dtk",
+        "peekOfCode": "def claim(driver):\n    # 좌측 cliam 클릭\n    driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # claimant\n    claimant = driver.find_element(by=By.NAME, value=\"field_ansprse\")\n    claimant.send_keys(\"Mercedes-Benz Korea\")\n    time.sleep(0.5)\n    claimant.send_keys(Keys.ENTER)\n    # 팝업 창",
+        "detail": "dtk",
+        "documentation": {}
+    },
+    {
+        "label": "receipts",
+        "kind": 2,
+        "importPath": "dtk",
+        "description": "dtk",
+        "peekOfCode": "def receipts(driver, row):\n    # 좌측 receipts 버튼 클릭\n    driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[13]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\n    waitLoading()\n    # new 버튼 클릭\n    driver.find_element(by=By.XPATH, value='//*[@id=\"mainpart\"]/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/a').click()\n    waitLoading()\n    # type of receipt\n    select = Select(driver.find_element(by=By.NAME, value=\"field_bel\"))\n    select.select_by_value(\"RK\")",
+        "detail": "dtk",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "kind": 2,
+        "importPath": "dtk",
+        "description": "dtk",
+        "peekOfCode": "def status(driver):\n    # 좌측 status 버튼 클릭\n    driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[18]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # status\n    typeOfProcedure = Select(driver.find_element(by=By.NAME, value=\"field_sst\"))\n    typeOfProcedure.select_by_value(\"B\")\n    # submit\n    driver.find_element(by=By.NAME, value=\"Abschicken\").click()\n    waitLoading()",
+        "detail": "dtk",
+        "documentation": {}
+    },
+    {
+        "label": "attributeWrite",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def attributeWrite(file_name):\n    wb = openpyxl.load_workbook(f\"./upload/{file_name}\")\n    sheet = wb.worksheets[0]\n    for i in range (1, 25):\n        sheet.cell(row = 5, column = i).value = columns.column[f\"{i}\"]\n    wb.save(f\"./upload/{file_name}\")\n    wb.close()\n# 엑셀 데이터 입력\ndef userInput():\n    f = open('./UserFiles/settings/setting.txt', 'r', encoding='utf-8')",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "userInput",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def userInput():\n    f = open('./UserFiles/settings/setting.txt', 'r', encoding='utf-8')\n    id = f.readline().strip()\n    password = f.readline().strip()\n    f.readline()\n    work_type = f.readline().split(':')[1].strip()              # 작업 종류\n    file_name = f.readline().split(':')[1].strip()              # 파일 이름\n    start_idx = int(f.readline().split(':')[1].strip()) - 1     # 시작 인덱스\n    last_idx = int(f.readline().split(':')[1].strip()) - 1      # 마지막 인덱스\n    minSecond = int(f.readline().split(':')[1].strip())         # 최소 시간",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "printUserInput",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def printUserInput(id, password, work_type, file_name, start_idx, last_idx, minSecond, maxSecond):\n    print(f\"아이디 : {id}\")\n    print(f\"패스워드 : {password}\")\n    print(f\"작업 종류: {work_type}\")\n    print(f\"파일 이름: {file_name}\")\n    print(f\"시작 No.: {start_idx + 1}\")\n    print(f\"마지막 No.: {last_idx + 1}\")\n    print(f\"최소 대기시간(초) : {minSecond}\")\n    print(f\"최대 대기시간(초) : {maxSecond}\")\ndef readXslx(file_name):",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "readXslx",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def readXslx(file_name):\n    df = pd.read_excel(f'./upload/{file_name}',\n                                        skiprows=4,\n                                        na_values='',\n                                        dtype = {\n                                            \"No.\": str,\n                                            \"Commission No.\": str,\n                                            \"VIN No.\": str,\n                                            \"Repair No.\": str,\n                                            \"B/L no.\": str,",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "dfToDictArr",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def dfToDictArr(df, start_idx, last_idx):\n    dataArr = []\n    for i in range(start_idx, last_idx + 1):\n        rowDict = df.loc[i].to_dict() # 각 행을 딕셔너리로 저장\n        rowDict['Closing Date'] = rowDict['Closing Date'][:10]\n        rowDict['Incident date'] = rowDict['Incident date'][:10]\n        rowDict['Date of booking'] = rowDict['Date of booking'][:10]\n        rowDict['Reclamation date'] = rowDict['Reclamation date'][:10]\n        dataArr.append(rowDict)\n    return dataArr  # 데이터 사전을 원소로 갖는 리스트",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "searchFileName",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def searchFileName(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    if dirName == \"LIST\":\n        result = [f\"{dirAbsPath}\\\\{fileList[0]}\"]\n    else:\n        result = []\n        for file in fileList:\n            if file.startswith(row[\"VIN No.\"]):",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "doesBLContainMolu",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def doesBLContainMolu(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    # Example:\n    # 'W1N9M0JB1PN028391_MOLU18004491675' -> returns True\n    for file in fileList:\n        if file.startswith(row[\"VIN No.\"]):\n            fileNameStrings = file.split(\"_\")\n            return fileNameStrings[1].startswith(\"MOLU\")",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "isHyundaiGlovis",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def isHyundaiGlovis(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    # Example:\n    # 'W1K1K5KB3PF200197_HDGLMXKR0523894A' -> returns True\n    for file in fileList:\n        if file.startswith(row[\"VIN No.\"]):\n            fileNameStrings = file.split(\"_\")\n            return fileNameStrings[1].startswith(\"HDGLMXKR\")",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "searchEmail",
+        "kind": 2,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "peekOfCode": "def searchEmail(row):\n    # 해당 VIN No.와 동일한 EMAIL파일의 경로를 찾는다.\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    file_list = list(glob(f\"{currentAbsPath}\\\\UserFiles\\\\upload\\\\EMAIL\\\\*.eml\"))\n    result = []\n    for file in file_list:\n        with open(file, 'rb') as fp:\n            msg = BytesParser(policy=policy.default).parse(fp)\n            txt = msg.get_body(preferencelist=('plain')).get_content()\n            if txt.find(row[\"VIN No.\"]) > -1:",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "now",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "now = datetime.datetime.now()\nnowDateTime = str(now.strftime('%Y%m%d_%H-%M-%S'))\nlogFile = open(f\"./UserFiles/result/{nowDateTime}.txt\", \"w\", encoding=\"utf-8\")\n# 파일이름, 시작NO., 마지막NO. 입력\ninputFunctions.printUserInput(id, password, work_type, file_name, start_idx, last_idx, minSecond, maxSecond)\n# 속성값 덮어쓰기\ninputFunctions.attributeWrite(file_name)\n# 읽은 데이터프레임 받아옴\ndf = inputFunctions.readXslx(file_name)\ndataArr = []",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "nowDateTime",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "nowDateTime = str(now.strftime('%Y%m%d_%H-%M-%S'))\nlogFile = open(f\"./UserFiles/result/{nowDateTime}.txt\", \"w\", encoding=\"utf-8\")\n# 파일이름, 시작NO., 마지막NO. 입력\ninputFunctions.printUserInput(id, password, work_type, file_name, start_idx, last_idx, minSecond, maxSecond)\n# 속성값 덮어쓰기\ninputFunctions.attributeWrite(file_name)\n# 읽은 데이터프레임 받아옴\ndf = inputFunctions.readXslx(file_name)\ndataArr = []\nfor i in range(start_idx, last_idx + 1):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "logFile",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "logFile = open(f\"./UserFiles/result/{nowDateTime}.txt\", \"w\", encoding=\"utf-8\")\n# 파일이름, 시작NO., 마지막NO. 입력\ninputFunctions.printUserInput(id, password, work_type, file_name, start_idx, last_idx, minSecond, maxSecond)\n# 속성값 덮어쓰기\ninputFunctions.attributeWrite(file_name)\n# 읽은 데이터프레임 받아옴\ndf = inputFunctions.readXslx(file_name)\ndataArr = []\nfor i in range(start_idx, last_idx + 1):\n    df.loc[i].to_dict()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "df = inputFunctions.readXslx(file_name)\ndataArr = []\nfor i in range(start_idx, last_idx + 1):\n    df.loc[i].to_dict()\n# 사전 리스트를 저장\ndataArr = inputFunctions.dfToDictArr(df, start_idx, last_idx)\n# 크롬 창 켜기\noptions = webdriver.ChromeOptions()\noptions.add_experimental_option(\"excludeSwitches\", [\"enable-logging\"])\ndriver = webdriver.Chrome(options=options)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "dataArr",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "dataArr = []\nfor i in range(start_idx, last_idx + 1):\n    df.loc[i].to_dict()\n# 사전 리스트를 저장\ndataArr = inputFunctions.dfToDictArr(df, start_idx, last_idx)\n# 크롬 창 켜기\noptions = webdriver.ChromeOptions()\noptions.add_experimental_option(\"excludeSwitches\", [\"enable-logging\"])\ndriver = webdriver.Chrome(options=options)\n# claimx.com 으로 이동",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "dataArr",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "dataArr = inputFunctions.dfToDictArr(df, start_idx, last_idx)\n# 크롬 창 켜기\noptions = webdriver.ChromeOptions()\noptions.add_experimental_option(\"excludeSwitches\", [\"enable-logging\"])\ndriver = webdriver.Chrome(options=options)\n# claimx.com 으로 이동\ncommon.toClaimX(driver)\n# 로그인\ninput(\"Login and press enter: \")\n# common.login(driver, id, password)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "options = webdriver.ChromeOptions()\noptions.add_experimental_option(\"excludeSwitches\", [\"enable-logging\"])\ndriver = webdriver.Chrome(options=options)\n# claimx.com 으로 이동\ncommon.toClaimX(driver)\n# 로그인\ninput(\"Login and press enter: \")\n# common.login(driver, id, password)\n# Archive 업로드 중 문제가 생기는 경우 True\narchiveError = False",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "driver = webdriver.Chrome(options=options)\n# claimx.com 으로 이동\ncommon.toClaimX(driver)\n# 로그인\ninput(\"Login and press enter: \")\n# common.login(driver, id, password)\n# Archive 업로드 중 문제가 생기는 경우 True\narchiveError = False\n# 작업 종류 선택\nif work_type == \"dtk\":",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "archiveError",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "archiveError = False\n# 작업 종류 선택\nif work_type == \"dtk\":\n    for row in dataArr:\n        try:\n            logFile.write(f\"========================{row['No.']}번째 줄========================\\n\")\n            print(f\"========================{row['No.']}번째 줄========================\")\n            logFile.write(f\"{row}\\n\\n\")\n            print(f\"{row}\\n\")\n            # 업로드 에러 flag 초기화",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "exe",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "exe = [Executable(\"main.py\")]\nsetup(\n    name = \"claimx_mbk\",\n    version = \"0.1\",\n    description = \"bot for claimx mbk\",\n    executables = exe\n)",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "sleep_timer_second",
+        "kind": 2,
+        "importPath": "timer",
+        "description": "timer",
+        "peekOfCode": "def sleep_timer_second(min, max):\n    range = max - min\n    time.sleep(min + random()*range)\ndef waitLoading():\n    time.sleep(2)",
+        "detail": "timer",
+        "documentation": {}
+    },
+    {
+        "label": "waitLoading",
+        "kind": 2,
+        "importPath": "timer",
+        "description": "timer",
+        "peekOfCode": "def waitLoading():\n    time.sleep(2)",
+        "detail": "timer",
+        "documentation": {}
+    }
+]

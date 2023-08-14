@@ -162,43 +162,33 @@ def VehicleLogistics(driver, file_name, row):
     driver.find_element(by=By.NAME, value="subfield_schzeit_year").send_keys(iYear)
 
     # claim type
-
-    for i in range(1, 11):
-        # damage code 마지막 6인지 검사
-        if i < 10:
-            dCode = str(row[f"Damage Code0{i}"])
-        else:
-            dCode = str(row[f"Damage Code{i}"])
+    # route section/cause
+    repairfor = str(row[f"Repair for"])
+    
+    if repairfor == "Missing":
+        # claim type (normal)
+        Select(driver.find_element(by=By.NAME, value="field_sart")).select_by_value("180") # Material damage
+        time.sleep(0.5)
         
-        # 없으면 반복 중지
-        if dCode == "nan":
-            break
-
-        # 마지막 자리가 6인 경우
-        if dCode.strip()[-1] == "6":
-            # claim type (normal)
-            Select(driver.find_element(by=By.NAME, value="field_sart")).select_by_value("180")
-            time.sleep(0.5)
-            
-            # route section/cause (normmal)
-            Select(driver.find_element(by=By.NAME, value="field_sber")).select_by_value("131") # matariel damage
-            time.sleep(0.5)
-            Select(driver.find_element(by=By.NAME, value="field_surs")).select_by_value("037") # partial theft
-            time.sleep(0.5)
-            
-
-        # 마지막 자리 6 아닌 경우 (normal case)
-        else:
-            # claim type (normal)
-            Select(driver.find_element(by=By.NAME, value="field_sart")).select_by_value("D01")
-            time.sleep(0.5)
-            
-            # route section/cause (normmal)
-            Select(driver.find_element(by=By.NAME, value="field_sber")).select_by_value("131")
-            time.sleep(0.5)
-            Select(driver.find_element(by=By.NAME, value="field_surs")).select_by_value("C00")
-            time.sleep(0.5)
-
+        # route section/cause
+        Select(driver.find_element(by=By.NAME, value="field_sber")).select_by_value("131") # sea transport incl. inland waterway
+        time.sleep(0.5)
+        Select(driver.find_element(by=By.NAME, value="field_surs")).select_by_value("037") # partial theft
+        time.sleep(0.5)
+        
+        
+        
+    # repairFor == "Damage"
+    else:
+        # claim type (normal)
+        Select(driver.find_element(by=By.NAME, value="field_sart")).select_by_value("D01") # Damage
+        time.sleep(0.5)
+        
+        # route section/cause
+        Select(driver.find_element(by=By.NAME, value="field_sber")).select_by_value("131") # sea transport incl. inland waterway
+        time.sleep(0.5)
+        Select(driver.find_element(by=By.NAME, value="field_surs")).select_by_value("C00") # unknown
+        time.sleep(0.5)
 
     # claimant's reference
     driver.find_element(by=By.NAME, value="field_ansprref").send_keys(row["Repair No."])

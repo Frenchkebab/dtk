@@ -103,15 +103,35 @@ def dfToDictArr(df, start_idx, last_idx):
 
 def searchFileName(dirName, row):
     currentAbsPath = os.path.dirname(os.path.realpath(__file__))
-    dirAbsPath = currentAbsPath + f"\\upload\\{dirName}"
+    dirAbsPath = currentAbsPath + f"\\UserFiles\\upload\\{dirName}"
     fileList = os.listdir(dirAbsPath)
 
-    if dirName == "LIST":
-        result = [f"{dirAbsPath}\\{fileList[0]}"]
-    else:
+    # BL, LIABILITY NOTICE 폴더의 경우 BL No.를 포함하는 파일을 찾는다.
+    if dirName == "BL" or dirName == "LIABILITY NOTICE":
         result = []
         for file in fileList:
-            if file.startswith(row["VIN No."]):
+            if row["B/L no."] in file:
+                result.append(f"{dirAbsPath}\\{file}")
+    
+    # PICTURE 폴더의 경우 Repair No.를 포함하는 파일을 찾는다.
+    elif dirName == "PICTURE":
+        result = []
+        for file in fileList:
+            if row["Repair No."] in file:
+                result.append(f"{dirAbsPath}\\{file}")
+    
+    # INVOICE 폴더의 경우 Commission No.를 포함하는 파일을 찾는다.  
+    elif dirName == "INVOICE":
+        result = []
+        for file in fileList:
+            if row["Commission No."] in file:
+                result.append(f"{dirAbsPath}\\{file}")
+                
+    # RO 폴더의 경우 Repair No.를 포함하는 파일을 찾는다.
+    elif dirName == "RO":
+        result = []
+        for file in fileList:
+            if row["Repair No."] in file:
                 result.append(f"{dirAbsPath}\\{file}")
         
     return result
@@ -139,22 +159,19 @@ def isHyundaiGlovis(dirName, row):
         if file.startswith(row["VIN No."]):
             fileNameStrings = file.split("_")
             return fileNameStrings[1].startswith("HDGLMXKR")
+
+# def searchEmail(row):
+#     # 해당 VIN No.와 동일한 EMAIL파일의 경로를 찾는다.
+#     currentAbsPath = os.path.dirname(os.path.realpath(__file__))
+#     file_list = list(glob(f"{currentAbsPath}\\UserFiles\\upload\\EMAIL\\*.eml"))
+
+#     result = []
+
+#     for file in file_list:
+#         with open(file, 'rb') as fp:
+#             msg = BytesParser(policy=policy.default).parse(fp)
+#             txt = msg.get_body(preferencelist=('plain')).get_content()
+#             if txt.find(row["VIN No."]) > -1:
+#                 result.append(file)
     
-
-
-
-def searchEmail(row):
-    # 해당 VIN No.와 동일한 EMAIL파일의 경로를 찾는다.
-    currentAbsPath = os.path.dirname(os.path.realpath(__file__))
-    file_list = list(glob(f"{currentAbsPath}\\UserFiles\\upload\\EMAIL\\*.eml"))
-
-    result = []
-
-    for file in file_list:
-        with open(file, 'rb') as fp:
-            msg = BytesParser(policy=policy.default).parse(fp)
-            txt = msg.get_body(preferencelist=('plain')).get_content()
-            if txt.find(row["VIN No."]) > -1:
-                result.append(file)
-    
-    return result
+#     return result

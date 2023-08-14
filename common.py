@@ -115,32 +115,25 @@ def archive(driver, logFile, row):
     # 팝업 창으로
     driver.switch_to.window(driver.window_handles[1])
     
-    fRO = searchFileName("RO", row)
-    sRO = "claim invoice"
 
     fBL = searchFileName("BL", row)
     sBL = "B/L"
-
+    
+    fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
+    sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
+    
     fPicture = searchFileName("PICTURE", row)
     sPicture = "Pictures vehicle damage"
 
-    fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
-    sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
-
-    ## damage report는 업로드 안함 (폴더가 비어있음)
-
-    fClaimSummary = searchFileName("CLAIM SUMMARY", row)
-    sClaimSummary = "Notification of the claim"
-
-    fEmail = searchEmail(row)
-    sEmail = "Incoming correspondence from claimant"
-
-    fList = searchFileName("LIST", row) # 얘만 list 아님
-    sList = "Incoming correspondence from claimant"
-
-    fileList = [fRO, fBL, fPicture, fLiabilityNotice, fClaimSummary, fEmail, fList]
-    selectionList = [sRO, sBL, sPicture, sLiabilityNotice, sClaimSummary, sEmail, sList]
-
+    fInvoice = searchFileName("INVOICE", row)
+    sInvoice = "Invoice of goods"
+    
+    fRO = searchFileName("RO", row)
+    sRO = "claim invoice"
+    
+    fileList = [fBL, fLiabilityNotice, fPicture, fInvoice, fRO]
+    selectionList = [sBL, sLiabilityNotice, sPicture, sInvoice, sRO]
+    
     uploadArchive(driver, logFile, fileList, selectionList)
 
     # Claim summary = notification of the claim
@@ -470,7 +463,7 @@ def getCid(file_name, driver, row):
     wb.save(f"./UserFiles/upload/{file_name}")
     wb.close()
 
-def uploadArchive(driver,logFile, fileList, selectionList):
+def uploadArchive(driver, logFile, fileList, selectionList):
     div = 1
     for i in range(0, 7):
         for file in fileList[i]:

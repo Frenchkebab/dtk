@@ -268,11 +268,11 @@ def archive(driver, logFile, row, archiveError = False):
     # 팝업 창으로
     driver.switch_to.window(driver.window_handles[1])
     
-    fRO = searchFileName("RO", row)
-    sRO = "claim invoice"
-
     fBL = searchFileName("BL", row)
     sBL = "B/L"
+    
+    fRO = searchFileName("RO", row)
+    sRO = "claim invoice"
 
     fPicture = searchFileName("PICTURE", row)
     sPicture = "damage photo"
@@ -280,19 +280,11 @@ def archive(driver, logFile, row, archiveError = False):
     fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
     sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
 
-    ## damage report는 업로드 안함 (폴더가 비어있음)
-
-    fClaimSummary = searchFileName("CLAIM SUMMARY", row)
-    sClaimSummary = "Notification of the claim"
-
-    fEmail = searchEmail(row)
-    sEmail = "Incoming correspondence from claimant"
-
     fList = searchFileName("LIST", row) # 얘만 list 아님
     sList = "Incoming correspondence from claimant"
 
-    fileList = [fRO, fBL, fPicture, fLiabilityNotice, fClaimSummary, fEmail, fList]
-    selectionList = [sRO, sBL, sPicture, sLiabilityNotice, sClaimSummary, sEmail, sList]
+    fileList = [fRO, fBL, fPicture, fLiabilityNotice, fList]
+    selectionList = [sRO, sBL, sPicture, sLiabilityNotice, sList]
 
     # 실제 업로드 로직
     uploadArchive(driver, logFile, fileList, selectionList)
@@ -311,9 +303,9 @@ def archive(driver, logFile, row, archiveError = False):
         print("올라간 파일 수와 올릴 파일 수가 다릅니다")
         return True
 
-    ## 파일의 개수가 9개 이하인 경우
-    if uploadedFileNum < 9:
-        print("업로드된 파일의 수가 9개보다 작습니다")
+    ## 파일의 개수가 5개 미만인 경우
+    if uploadedFileNum < 5:
+        print("업로드된 파일의 수가 5개보다 작습니다")
         return True      
     
 
@@ -331,7 +323,7 @@ def claim(driver):
 
     # claimant
     claimant = driver.find_element(by=By.NAME, value="field_ansprse")
-    claimant.send_keys("Mercedes-Benz Korea")
+    claimant.send_keys("Daimler Trucks Korea")
     time.sleep(0.5)
     claimant.send_keys(Keys.ENTER)
 
@@ -377,7 +369,7 @@ def receipts(driver, row):
 
     # involved party
     involvedParty = driver.find_element(by=By.NAME, value="field_belansprse")
-    involvedParty.send_keys("Mercedes-Benz Korea")
+    involvedParty.send_keys("Daimler Trucks Korea")
     involvedParty.send_keys(Keys.ENTER)
     
     # 팝업 창 전환

@@ -429,7 +429,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def archive(driver, logFile, row):\n    # archive 버튼 클릭\n    driver.find_element_by_link_text(\"archive\").click()\n    waitLoading()\n    # 파일 버튼 클릭\n    driver.find_element_by_xpath('//*[@id=\"mainpart\"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()\n    waitLoading()\n    # 팝업 창으로\n    driver.switch_to.window(driver.window_handles[1])\n    fRO = searchFileName(\"RO\", row)",
+        "peekOfCode": "def archive(driver, logFile, row):\n    # archive 버튼 클릭\n    driver.find_element_by_link_text(\"archive\").click()\n    waitLoading()\n    # 파일 버튼 클릭\n    driver.find_element_by_xpath('//*[@id=\"mainpart\"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()\n    waitLoading()\n    # 팝업 창으로\n    driver.switch_to.window(driver.window_handles[1])\n    fBL = searchFileName(\"BL\", row)",
         "detail": "common",
         "documentation": {}
     },
@@ -564,7 +564,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def uploadArchive(driver,logFile, fileList, selectionList):\n    div = 1\n    for i in range(0, 7):\n        for file in fileList[i]:\n            writeLog(logFile, file)\n            # file selection 클릭\n            driver.implicitly_wait(5)\n            fileSelection = driver.find_element(by=By.XPATH, value='//*[@id=\"actions\"]/div[1]/span')\n            fileSelection.click()\n            time.sleep(2)",
+        "peekOfCode": "def uploadArchive(driver, logFile, fileList, selectionList):\n    div = 1\n    for i in range(0, 7):\n        for file in fileList[i]:\n            writeLog(logFile, file)\n            # file selection 클릭\n            driver.implicitly_wait(5)\n            fileSelection = driver.find_element(by=By.XPATH, value='//*[@id=\"actions\"]/div[1]/span')\n            fileSelection.click()\n            time.sleep(2)",
         "detail": "common",
         "documentation": {}
     },
@@ -591,7 +591,7 @@
         "kind": 2,
         "importPath": "dtk",
         "description": "dtk",
-        "peekOfCode": "def claim(driver):\n    # 좌측 cliam 클릭\n    driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # claimant\n    claimant = driver.find_element(by=By.NAME, value=\"field_ansprse\")\n    claimant.send_keys(\"Mercedes-Benz Korea\")\n    time.sleep(0.5)\n    claimant.send_keys(Keys.ENTER)\n    # 팝업 창",
+        "peekOfCode": "def claim(driver):\n    # 좌측 cliam 클릭\n    driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # claimant\n    claimant = driver.find_element(by=By.NAME, value=\"field_ansprse\")\n    claimant.send_keys(\"Daimler Trucks Korea\")\n    time.sleep(0.5)\n    claimant.send_keys(Keys.ENTER)\n    # 팝업 창",
         "detail": "dtk",
         "documentation": {}
     },
@@ -663,7 +663,7 @@
         "kind": 2,
         "importPath": "inputFunctions",
         "description": "inputFunctions",
-        "peekOfCode": "def searchFileName(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    if dirName == \"LIST\":\n        result = [f\"{dirAbsPath}\\\\{fileList[0]}\"]\n    else:\n        result = []\n        for file in fileList:\n            if file.startswith(row[\"VIN No.\"]):",
+        "peekOfCode": "def searchFileName(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\UserFiles\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    # BL, LIABILITY NOTICE 폴더의 경우 BL No.를 포함하는 파일을 찾는다.\n    if dirName == \"BL\" or dirName == \"LIABILITY NOTICE\":\n        result = []\n        for file in fileList:\n            if row[\"B/L no.\"] in file:\n                result.append(f\"{dirAbsPath}\\\\{file}\")",
         "detail": "inputFunctions",
         "documentation": {}
     },
@@ -682,15 +682,6 @@
         "importPath": "inputFunctions",
         "description": "inputFunctions",
         "peekOfCode": "def isHyundaiGlovis(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    # Example:\n    # 'W1K1K5KB3PF200197_HDGLMXKR0523894A' -> returns True\n    for file in fileList:\n        if file.startswith(row[\"VIN No.\"]):\n            fileNameStrings = file.split(\"_\")\n            return fileNameStrings[1].startswith(\"HDGLMXKR\")",
-        "detail": "inputFunctions",
-        "documentation": {}
-    },
-    {
-        "label": "searchEmail",
-        "kind": 2,
-        "importPath": "inputFunctions",
-        "description": "inputFunctions",
-        "peekOfCode": "def searchEmail(row):\n    # 해당 VIN No.와 동일한 EMAIL파일의 경로를 찾는다.\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    file_list = list(glob(f\"{currentAbsPath}\\\\UserFiles\\\\upload\\\\EMAIL\\\\*.eml\"))\n    result = []\n    for file in file_list:\n        with open(file, 'rb') as fp:\n            msg = BytesParser(policy=policy.default).parse(fp)\n            txt = msg.get_body(preferencelist=('plain')).get_content()\n            if txt.find(row[\"VIN No.\"]) > -1:",
         "detail": "inputFunctions",
         "documentation": {}
     },

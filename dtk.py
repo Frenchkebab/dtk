@@ -226,8 +226,6 @@ def VehicleLogistics(driver, file_name, row):
         else:
             dCode = str(row[f"Damage Code{i}"])
             
-        print(f"Damage Code{i}: {dCode}")
-        
         # 없으면 반복 중지
         if dCode == "nan":
             break
@@ -271,20 +269,20 @@ def archive(driver, logFile, row, archiveError = False):
     fBL = searchFileName("BL", row)
     sBL = "B/L"
     
+    fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
+    sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
+    
+    fPicture = searchFileName("PICTURE", row)
+    sPicture = "damage photo"
+    
+    fInvoice = searchFileName("INVOICE", row)
+    sInvoice = "invoice of goods"
+    
     fRO = searchFileName("RO", row)
     sRO = "claim invoice"
 
-    fPicture = searchFileName("PICTURE", row)
-    sPicture = "damage photo"
-
-    fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
-    sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
-
-    fList = searchFileName("LIST", row) # 얘만 list 아님
-    sList = "Incoming correspondence from claimant"
-
-    fileList = [fRO, fBL, fPicture, fLiabilityNotice, fList]
-    selectionList = [sRO, sBL, sPicture, sLiabilityNotice, sList]
+    fileList = [fRO, fBL, fPicture, fLiabilityNotice, fInvoice]
+    selectionList = [sRO, sBL, sPicture, sLiabilityNotice, sInvoice]
 
     # 실제 업로드 로직
     uploadArchive(driver, logFile, fileList, selectionList)
@@ -299,9 +297,9 @@ def archive(driver, logFile, row, archiveError = False):
     # 업로드 상태 확인
 
     ## 파일의 개수가 안맞는 경우
-    if uploadedFileNum != uploadFileNum + 1:
-        print("올라간 파일 수와 올릴 파일 수가 다릅니다")
-        return True
+    # if uploadedFileNum != uploadFileNum + 1:
+    #     print("올라간 파일 수와 올릴 파일 수가 다릅니다")
+    #     return True
 
     ## 파일의 개수가 5개 미만인 경우
     if uploadedFileNum < 5:

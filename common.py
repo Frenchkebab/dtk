@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait as wait
 import datetime
+import inputFunctions
 
 def altTab():
     pyautogui.keyDown('alt')
@@ -41,7 +42,7 @@ def toClaimX(driver):
 
 def clickClaim(driver):
     # claim 버튼 클릭
-    driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()
+    driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()
 
 def memo(file_name, row, msg):
     # 엑셀 파일 오픈
@@ -49,12 +50,12 @@ def memo(file_name, row, msg):
 
     # 시트 설정
     sheet = wb.worksheets[0]
-
+    print(0 + int(row["No."]))
     if row == 0:
-        sheet.cell(row = 5, column = 24).value = msg
+        sheet.cell(row = 1, column = 23).value = msg
     else:
         # cid값 저장
-        sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
+        sheet.cell(row = 1 + int(row["No."]), column = 23).value = msg
 
     # 파일 저장 후 닫기
     wb.save(f"./UserFiles/upload/{file_name}")
@@ -66,7 +67,7 @@ def writeLog(logFile, msg):
 # from random import random, randint
 
 #     # policy/type of insurance
-#     Select(driver.find_element_by_name("field_police")).select_by_value("30109636-06154-2021")
+#     Select(driver.find_element(by=By.NAME, value="field_police")).select_by_value("30109636-06154-2021")
 #     Select(driver.find_element_by_name("field_kzvers")).select_by_value("CL08")
 
 #     # estimated/amount claimed
@@ -109,26 +110,26 @@ def archive(driver, logFile, row):
     waitLoading()
 
     # 파일 버튼 클릭
-    driver.find_element_by_xpath('//*[@id="mainpart"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()
+    driver.find_element(by=By.XPATH, value='//*[@id="mainpart"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()
     waitLoading()
 
     # 팝업 창으로
     driver.switch_to.window(driver.window_handles[1])
     
 
-    fBL = searchFileName("BL", row)
+    fBL = inputFunctions.searchFileName("BL", row)
     sBL = "B/L"
     
-    fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
+    fLiabilityNotice = inputFunctions.searchFileName("LIABILITY NOTICE", row)
     sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
     
-    fPicture = searchFileName("PICTURE", row)
+    fPicture = inputFunctions.searchFileName("PICTURE", row)
     sPicture = "Pictures vehicle damage"
 
-    fInvoice = searchFileName("INVOICE", row)
+    fInvoice = inputFunctions.searchFileName("INVOICE", row)
     sInvoice = "Invoice of goods"
     
-    fRO = searchFileName("RO", row)
+    fRO = inputFunctions.searchFileName("RO", row)
     sRO = "claim invoice"
     
     fileList = [fBL, fLiabilityNotice, fPicture, fInvoice, fRO]
@@ -145,11 +146,11 @@ def archive(driver, logFile, row):
 
 def claim(driver):
     # 좌측 cliam 클릭
-    driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a").click()
+    driver.find_element(by=By.XPATH, value="/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a").click()
     waitLoading()
 
     # claimant
-    claimant = driver.find_element_by_name("field_ansprse")
+    claimant = driver.find_element(by=By.NAME, value="field_ansprse")
     claimant.send_keys("Mercedes-Benz Korea")
     time.sleep(0.5)
     claimant.send_keys(Keys.ENTER)
@@ -159,7 +160,7 @@ def claim(driver):
     waitLoading()
 
     # + 버튼 클릭
-    driver.find_element_by_xpath("/html/body/table[2]/tbody/tr[1]/td[1]/input").click()
+    driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr[1]/td[1]/input").click()
     driver.implicitly_wait(10)
 
     # 창 닫혔는지 검사
@@ -175,27 +176,27 @@ def claim(driver):
     driver.implicitly_wait(60 * 20)
 
     # 창 닫힌 후 submit 버튼 누르기    
-    driver.find_element_by_name("speichern").click()
+    driver.find_element(by=By.NAME, value="speichern").click()
     waitLoading()
 
     # 완료
 
 def receipts(driver, row):
     # 좌측 receipts 버튼 클릭
-    driver.find_element_by_xpath('/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[13]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()
+    driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[13]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()
     waitLoading()
 
     # new 버튼 클릭
-    driver.find_element_by_xpath('//*[@id="mainpart"]/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/a').click()
+    driver.find_element(by=By.XPATH, value='//*[@id="mainpart"]/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/a').click()
     waitLoading()
 
     # type of receipt
-    select = Select(driver.find_element_by_name("field_bel"))
+    select = Select(driver.find_element(by=By.NAME, value="field_bel"))
     select.select_by_value("RK")
     waitLoading()
 
     # involved party
-    involvedParty = driver.find_element_by_name("field_belansprse")
+    involvedParty = driver.find_element(by=By.NAME, value="field_belansprse")
     involvedParty.send_keys("Mercedes-Benz Korea")
     involvedParty.send_keys(Keys.ENTER)
     
@@ -206,7 +207,7 @@ def receipts(driver, row):
 
     # + 버튼 클릭
     driver.implicitly_wait(10)
-    driver.find_element_by_xpath("/html/body/table[2]/tbody/tr[1]/td[1]/input").click()
+    driver.find_element(by=By.XPATH, value="/html/body/table[2]/tbody/tr[1]/td[1]/input").click()
 
     # 창 닫혔는지 검사
     while True:
@@ -220,67 +221,67 @@ def receipts(driver, row):
     time.sleep(2)
     
     # receipt number
-    driver.find_element_by_name("field_belref").send_keys(row["Repair No."])
+    driver.find_element(by=By.NAME, value="field_belref").send_keys(row["Repair No."])
     time.sleep(0.5)
 
     # date of receipt
-    receiptYear = row["Closing Date"][0:4]
+    receiptYear = row["Closing Date"][0:3]
     receiptMonth = row["Closing Date"][5:7]
     receiptDay = row["Closing Date"][-2:]
 
-    driver.find_element_by_name("subfield_beldat_day").send_keys(receiptDay)
+    driver.find_element(by=By.NAME, value="subfield_beldat_day").send_keys(receiptDay)
     time.sleep(0.5)
-    driver.find_element_by_name("subfield_beldat_month").send_keys(receiptMonth)
+    driver.find_element(by=By.NAME, value="subfield_beldat_month").send_keys(receiptMonth)
     time.sleep(0.5)
-    driver.find_element_by_name("subfield_beldat_year").send_keys(receiptYear)
+    driver.find_element(by=By.NAME, value="subfield_beldat_year").send_keys(receiptYear)
     time.sleep(0.5)
 
     # tax key
-    taxKey = Select(driver.find_element_by_name("field_belstschl"))
+    taxKey = Select(driver.find_element(by=By.NAME, value="field_belstschl"))
     taxKey.select_by_value("100")
     time.sleep(1)
 
     # amount on receipt nett KRW -> 한 개만 입력하면 나머지는 자동빵
-    driver.find_element_by_name("field_betrag_bwhg").send_keys(row["Sub Total"])
+    driver.find_element(by=By.NAME, value="field_betrag_bwhg").send_keys(row["Sub Total"])
     waitLoading()
 
     # Submit 버튼 클릭
     driver.implicitly_wait(60 * 20)
-    driver.find_element_by_name("bt_speichern").click()
+    driver.find_element(by=By.NAME, value="bt_speichern").click()
     waitLoading()
 
     # >> 버튼 클릭
-    driver.find_element_by_xpath('//*[@id="mainpart"]/form/table/tbody/tr[3]/td[6]/a[4]/img').click()
+    driver.find_element(by=By.XPATH, value='//*[@id="mainpart"]/form/table/tbody/tr[3]/td[6]/a[4]/img').click()
 
     # type of procedure
-    typeOfProcedure = Select(driver.find_element_by_name("field_atyp"))
+    typeOfProcedure = Select(driver.find_element(by=By.NAME, value="field_atyp"))
     typeOfProcedure.select_by_value("VR")
     waitLoading()
 
     # new claim status broker/ins.
-    typeOfProcedure = Select(driver.find_element_by_name("field_sst"))
+    typeOfProcedure = Select(driver.find_element(by=By.NAME, value="field_sst"))
     typeOfProcedure.select_by_value("G")
     waitLoading()
 
     # delete reserves
-    driver.find_element_by_name("field_reskz").click()
+    driver.find_element(by=By.NAME, value="field_reskz").click()
     time.sleep(1)
 
     # submit 버튼 클릭
-    driver.find_element_by_name("bt_speichern").click()
+    driver.find_element(by=By.NAME, value="bt_speichern").click()
     waitLoading()
 
 def status(driver):
     # 좌측 status 버튼 클릭
-    driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[18]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a").click()
+    driver.find_element(by=By.XPATH, value="/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[18]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a").click()
     waitLoading()
 
     # status
-    typeOfProcedure = Select(driver.find_element_by_name("field_sst"))
+    typeOfProcedure = Select(driver.find_element(by=By.NAME, value="field_sst"))
     typeOfProcedure.select_by_value("B")
 
     # submit
-    driver.find_element_by_name("Abschicken").click()
+    driver.find_element(by=By.NAME, value="Abschicken").click()
     waitLoading()
 # from timer import *
 import openpyxl
@@ -359,21 +360,21 @@ def memo(file_name, row, msg, archiveError=False):
 
     # 시트 설정
     sheet = wb.worksheets[0]
-    sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
+    sheet.cell(row = 1 + int(row["No."]), column = 23).value = msg
 
     
     # Memo 작성
     if row == 0:
-        sheet.cell(row = 5, column = 24).value = msg
+        sheet.cell(row = 1, column = 24).value = msg
     else:
         # cid값 저장
-        sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
+        sheet.cell(row = 1 + int(row["No."]), column = 23).value = msg
 
 
     # archiveError가 있는 경우 Memo 옆에 표시해둠
     if archiveError:
         print("Archive Error Memo")
-        sheet.cell(row = 5 + int(row["No."]), column = 25).value = "Upload Error"
+        sheet.cell(row = 1 + int(row["No."]), column = 24).value = "Upload Error"
 
     # 파일 저장 후 닫기
     wb.save(f"./UserFiles/upload/{file_name}")
@@ -457,7 +458,7 @@ def getCid(file_name, driver, row):
     sheet = wb.worksheets[0]
 
     # cid값 저장
-    sheet.cell(row = 5 + int(row["No."]), column = 23).value = cid
+    sheet.cell(row = 1 + int(row["No."]), column = 22).value = cid
 
     # 파일 저장 후 닫기
     wb.save(f"./UserFiles/upload/{file_name}")
@@ -465,7 +466,7 @@ def getCid(file_name, driver, row):
 
 def uploadArchive(driver, logFile, fileList, selectionList):
     div = 1
-    for i in range(0, 7):
+    for i in range(0, 5):
         for file in fileList[i]:
             writeLog(logFile, file)
 
@@ -497,7 +498,7 @@ def uploadArchive(driver, logFile, fileList, selectionList):
             pyautogui.press("enter")
             waitLoading()
 
-
+    # upload 버튼 클릭
     driver.find_element(by=By.XPATH, value='//*[@id="actions"]/div[1]/button[1]').click()
 
     driver.implicitly_wait(5)

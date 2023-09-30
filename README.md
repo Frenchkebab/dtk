@@ -1,9 +1,6 @@
 
 ```
-rm -r dist
-pyinstaller main.py 
-cp -r result settings upload chromedriver.exe dist/main
-cp -r dist/main /c/CLAIMX/mbk새버전
+rm -r dist && pyinstaller main.py && cp -r userfiles dist/main && cp -r dist/main /c/CLAIMX/dtk && cd /C/CLAIMX/dtk/main && explorer . && cd /c/CLAIMX/test/dtk 
 ```
 
 ## 변경사항

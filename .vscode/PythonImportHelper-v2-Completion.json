@@ -180,6 +180,31 @@
         "documentation": {}
     },
     {
+        "label": "inputFunctions",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "isExtraImport": true,
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "inputFunctions",
+        "description": "inputFunctions",
+        "isExtraImport": true,
+        "detail": "inputFunctions",
+        "documentation": {}
+    },
+    {
         "label": "ActionChains",
         "importPath": "selenium.webdriver",
         "description": "selenium.webdriver",
@@ -242,31 +267,6 @@
         "importPath": "clipboard",
         "description": "clipboard",
         "detail": "clipboard",
-        "documentation": {}
-    },
-    {
-        "label": "inputFunctions",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "inputFunctions",
-        "description": "inputFunctions",
-        "detail": "inputFunctions",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "inputFunctions",
-        "description": "inputFunctions",
-        "isExtraImport": true,
-        "detail": "inputFunctions",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "inputFunctions",
-        "description": "inputFunctions",
-        "isExtraImport": true,
-        "detail": "inputFunctions",
         "documentation": {}
     },
     {
@@ -402,7 +402,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def clickClaim(driver):\n    # claim 버튼 클릭\n    driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\ndef memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg",
+        "peekOfCode": "def clickClaim(driver):\n    # claim 버튼 클릭\n    driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\ndef memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    print(0 + int(row[\"No.\"]))\n    if row == 0:",
         "detail": "common",
         "documentation": {}
     },
@@ -411,7 +411,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:\n        # cid값 저장\n        sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
+        "peekOfCode": "def memo(file_name, row, msg):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    print(0 + int(row[\"No.\"]))\n    if row == 0:\n        sheet.cell(row = 1, column = 23).value = msg\n    else:\n        # cid값 저장",
         "detail": "common",
         "documentation": {}
     },
@@ -420,7 +420,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def writeLog(logFile, msg):\n    logFile.write(f\"{msg}\\n\")\n# from random import random, randint\n#     # policy/type of insurance\n#     Select(driver.find_element_by_name(\"field_police\")).select_by_value(\"30109636-06154-2021\")\n#     Select(driver.find_element_by_name(\"field_kzvers\")).select_by_value(\"CL08\")\n#     # estimated/amount claimed\n#     total = row[\"Sub Total\"]\n#     driver.find_element_by_name(\"field_fordmsw\").send_keys(total)\n#     Select(driver.find_element_by_name(\"field_qmsts\")).select_by_value(\"034\")",
+        "peekOfCode": "def writeLog(logFile, msg):\n    logFile.write(f\"{msg}\\n\")\n# from random import random, randint\n#     # policy/type of insurance\n#     Select(driver.find_element(by=By.NAME, value=\"field_police\")).select_by_value(\"30109636-06154-2021\")\n#     Select(driver.find_element_by_name(\"field_kzvers\")).select_by_value(\"CL08\")\n#     # estimated/amount claimed\n#     total = row[\"Sub Total\"]\n#     driver.find_element_by_name(\"field_fordmsw\").send_keys(total)\n#     Select(driver.find_element_by_name(\"field_qmsts\")).select_by_value(\"034\")",
         "detail": "common",
         "documentation": {}
     },
@@ -429,7 +429,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def archive(driver, logFile, row):\n    # archive 버튼 클릭\n    driver.find_element_by_link_text(\"archive\").click()\n    waitLoading()\n    # 파일 버튼 클릭\n    driver.find_element_by_xpath('//*[@id=\"mainpart\"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()\n    waitLoading()\n    # 팝업 창으로\n    driver.switch_to.window(driver.window_handles[1])\n    fBL = searchFileName(\"BL\", row)",
+        "peekOfCode": "def archive(driver, logFile, row):\n    # archive 버튼 클릭\n    driver.find_element_by_link_text(\"archive\").click()\n    waitLoading()\n    # 파일 버튼 클릭\n    driver.find_element(by=By.XPATH, value='//*[@id=\"mainpart\"]/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/img').click()\n    waitLoading()\n    # 팝업 창으로\n    driver.switch_to.window(driver.window_handles[1])\n    fBL = inputFunctions.searchFileName(\"BL\", row)",
         "detail": "common",
         "documentation": {}
     },
@@ -438,7 +438,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def claim(driver):\n    # 좌측 cliam 클릭\n    driver.find_element_by_xpath(\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # claimant\n    claimant = driver.find_element_by_name(\"field_ansprse\")\n    claimant.send_keys(\"Mercedes-Benz Korea\")\n    time.sleep(0.5)\n    claimant.send_keys(Keys.ENTER)\n    # 팝업 창",
+        "peekOfCode": "def claim(driver):\n    # 좌측 cliam 클릭\n    driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[12]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # claimant\n    claimant = driver.find_element(by=By.NAME, value=\"field_ansprse\")\n    claimant.send_keys(\"Mercedes-Benz Korea\")\n    time.sleep(0.5)\n    claimant.send_keys(Keys.ENTER)\n    # 팝업 창",
         "detail": "common",
         "documentation": {}
     },
@@ -447,7 +447,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def receipts(driver, row):\n    # 좌측 receipts 버튼 클릭\n    driver.find_element_by_xpath('/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[13]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\n    waitLoading()\n    # new 버튼 클릭\n    driver.find_element_by_xpath('//*[@id=\"mainpart\"]/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/a').click()\n    waitLoading()\n    # type of receipt\n    select = Select(driver.find_element_by_name(\"field_bel\"))\n    select.select_by_value(\"RK\")",
+        "peekOfCode": "def receipts(driver, row):\n    # 좌측 receipts 버튼 클릭\n    driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[13]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()\n    waitLoading()\n    # new 버튼 클릭\n    driver.find_element(by=By.XPATH, value='//*[@id=\"mainpart\"]/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/a').click()\n    waitLoading()\n    # type of receipt\n    select = Select(driver.find_element(by=By.NAME, value=\"field_bel\"))\n    select.select_by_value(\"RK\")",
         "detail": "common",
         "documentation": {}
     },
@@ -456,7 +456,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def status(driver):\n    # 좌측 status 버튼 클릭\n    driver.find_element_by_xpath(\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[18]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # status\n    typeOfProcedure = Select(driver.find_element_by_name(\"field_sst\"))\n    typeOfProcedure.select_by_value(\"B\")\n    # submit\n    driver.find_element_by_name(\"Abschicken\").click()\n    waitLoading()",
+        "peekOfCode": "def status(driver):\n    # 좌측 status 버튼 클릭\n    driver.find_element(by=By.XPATH, value=\"/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[18]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a\").click()\n    waitLoading()\n    # status\n    typeOfProcedure = Select(driver.find_element(by=By.NAME, value=\"field_sst\"))\n    typeOfProcedure.select_by_value(\"B\")\n    # submit\n    driver.find_element(by=By.NAME, value=\"Abschicken\").click()\n    waitLoading()",
         "detail": "common",
         "documentation": {}
     },
@@ -510,7 +510,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def uploadedFileNumCheck(driver):\n    wait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[17]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a'))).click()\n    uploadedFileNum = wait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id=\"mainpart\"]/table[6]/tbody/tr[2]/td[2]'))).get_attribute('innerText').strip()\n    return int(uploadedFileNum)\ndef memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg",
+        "peekOfCode": "def uploadedFileNumCheck(driver):\n    wait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/table/tbody/tr[3]/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table[5]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[17]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a'))).click()\n    uploadedFileNum = wait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id=\"mainpart\"]/table[6]/tbody/tr[2]/td[2]'))).get_attribute('innerText').strip()\n    return int(uploadedFileNum)\ndef memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 1 + int(row[\"No.\"]), column = 23).value = msg",
         "detail": "common",
         "documentation": {}
     },
@@ -519,7 +519,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 5 + int(row[\"No.\"]), column = 24).value = msg\n    # Memo 작성\n    if row == 0:\n        sheet.cell(row = 5, column = 24).value = msg\n    else:",
+        "peekOfCode": "def memo(file_name, row, msg, archiveError=False):\n    # 엑셀 파일 오픈\n    wb = openpyxl.load_workbook(f\"./UserFiles/upload/{file_name}\")\n    # 시트 설정\n    sheet = wb.worksheets[0]\n    sheet.cell(row = 1 + int(row[\"No.\"]), column = 23).value = msg\n    # Memo 작성\n    if row == 0:\n        sheet.cell(row = 1, column = 24).value = msg\n    else:",
         "detail": "common",
         "documentation": {}
     },
@@ -564,7 +564,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def uploadArchive(driver, logFile, fileList, selectionList):\n    div = 1\n    for i in range(0, 7):\n        for file in fileList[i]:\n            writeLog(logFile, file)\n            # file selection 클릭\n            driver.implicitly_wait(5)\n            fileSelection = driver.find_element(by=By.XPATH, value='//*[@id=\"actions\"]/div[1]/span')\n            fileSelection.click()\n            time.sleep(2)",
+        "peekOfCode": "def uploadArchive(driver, logFile, fileList, selectionList):\n    div = 1\n    for i in range(0, 5):\n        for file in fileList[i]:\n            writeLog(logFile, file)\n            # file selection 클릭\n            driver.implicitly_wait(5)\n            fileSelection = driver.find_element(by=By.XPATH, value='//*[@id=\"actions\"]/div[1]/span')\n            fileSelection.click()\n            time.sleep(2)",
         "detail": "common",
         "documentation": {}
     },
@@ -663,7 +663,7 @@
         "kind": 2,
         "importPath": "inputFunctions",
         "description": "inputFunctions",
-        "peekOfCode": "def searchFileName(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    dirAbsPath = currentAbsPath + f\"\\\\UserFiles\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    # BL, LIABILITY NOTICE 폴더의 경우 BL No.를 포함하는 파일을 찾는다.\n    if dirName == \"BL\" or dirName == \"LIABILITY NOTICE\":\n        result = []\n        for file in fileList:\n            if row[\"B/L no.\"] in file:\n                result.append(f\"{dirAbsPath}\\\\{file}\")",
+        "peekOfCode": "def searchFileName(dirName, row):\n    currentAbsPath = os.path.dirname(os.path.realpath(__file__))\n    print(currentAbsPath)\n    dirAbsPath = currentAbsPath + f\"\\\\UserFiles\\\\upload\\\\{dirName}\"\n    fileList = os.listdir(dirAbsPath)\n    # BL, LIABILITY NOTICE 폴더의 경우 BL No.를 포함하는 파일을 찾는다.\n    if dirName == \"BL\" or dirName == \"LIABILITY NOTICE\":\n        result = []\n        for file in fileList:\n            if row[\"B/L no.\"] in file:",
         "detail": "inputFunctions",
         "documentation": {}
     },

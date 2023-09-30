@@ -103,6 +103,7 @@ def dfToDictArr(df, start_idx, last_idx):
 
 def searchFileName(dirName, row):
     currentAbsPath = os.path.dirname(os.path.realpath(__file__))
+    print(currentAbsPath)
     dirAbsPath = currentAbsPath + f"\\UserFiles\\upload\\{dirName}"
     fileList = os.listdir(dirAbsPath)
 

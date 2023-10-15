@@ -92,7 +92,6 @@ if work_type == "dtk":
                     # 정상적으로 완료되면 CID를 저장
                     common.getCid(file_name, driver, row)
                     common.memo(file_name, row, "Vehicle-Logistics done")
-                    print(row)   
                     logFile.write("Vehicle-Logistics 완료\n")
                     print("Vehicle-Logistics 완료")
                 else:

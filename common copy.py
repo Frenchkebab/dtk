@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait as wait
 import datetime
-import inputFunctions
 
 def altTab():
     pyautogui.keyDown('alt')
@@ -24,18 +23,18 @@ def toClaimX(driver):
 
 # def login(driver, id, password):
 #     # id 입력
-#     driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[1]/td[2]/input").send_keys(id)
+#     driver.find_element(by=By.XPATH, value="/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[1]/td[2]/input").send_keys(id)
 #     time.sleep(0.5)
 
 #     # password 입력
-#     driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[2]/td[2]/input").send_keys(password)
+#     driver.find_element(by=By.XPATH, value="/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[2]/td[2]/input").send_keys(password)
     
 #     # 로그인 버튼 클릭
-#     driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[3]/td/input").click()
+#     driver.find_element(by=By.XPATH, value="/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/form/table/tbody/tr[3]/td/input").click()
 
 #     # 문 버튼이 나타나면 클릭, 없으면 그냥 패스
 #     try:
-#         driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a[1]/img").click()
+#         driver.find_element(by=By.XPATH, value="/html/body/table/tbody/tr[3]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a[1]/img").click()
 
 #     except:
 #         pass
@@ -46,19 +45,19 @@ def clickClaim(driver):
 
 def memo(file_name, row, msg):
     # 엑셀 파일 오픈
-    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./upload/{file_name}")
 
     # 시트 설정
     sheet = wb.worksheets[0]
-    print(0 + int(row["No."]))
+
     if row == 0:
-        sheet.cell(row = 1, column = 23).value = msg
+        sheet.cell(row = 5, column = 24).value = msg
     else:
         # cid값 저장
-        sheet.cell(row = 1 + int(row["No."]), column = 23).value = msg
+        sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
 
     # 파일 저장 후 닫기
-    wb.save(f"./UserFiles/upload/{file_name}")
+    wb.save(f"./upload/{file_name}")
     wb.close()
 
 def writeLog(logFile, msg):
@@ -68,16 +67,16 @@ def writeLog(logFile, msg):
 
 #     # policy/type of insurance
 #     Select(driver.find_element(by=By.NAME, value="field_police")).select_by_value("30109636-06154-2021")
-#     Select(driver.find_element_by_name("field_kzvers")).select_by_value("CL08")
+#     Select(driver.find_element(by=By.NAME, value="field_kzvers")).select_by_value("CL08")
 
 #     # estimated/amount claimed
 #     total = row["Sub Total"]
-#     driver.find_element_by_name("field_fordmsw").send_keys(total)
-#     Select(driver.find_element_by_name("field_qmsts")).select_by_value("034")
+#     driver.find_element(by=By.NAME, value="field_fordmsw").send_keys(total)
+#     Select(driver.find_element(by=By.NAME, value="field_qmsts")).select_by_value("034")
 #     time.sleep(0.5)
 
 #     # Q-Dome claim?
-#     driver.find_element_by_name("field_qdome").click()
+#     driver.find_element(by=By.NAME, value="field_qdome").click()
 #     time.sleep(0.5)
 
 #     # 5-digit-code
@@ -91,13 +90,13 @@ def writeLog(logFile, msg):
 #         if dCode == "nan":
 #             break
 #         else:
-#             driver.find_element_by_name("field_cteilnr").send_keys(dCode)
+#             driver.find_element(by=By.NAME, value="field_cteilnr").send_keys(dCode)
 #             waitLoading()
-#             driver.find_element_by_name("speichern_ccode").click()
+#             driver.find_element(by=By.NAME, value="speichern_ccode").click()
 #             waitLoading()
 
 #     # submit
-#     driver.find_element_by_name("speichern").click() # submit 버튼 클릭
+#     driver.find_element(by=By.NAME, value="speichern").click() # submit 버튼 클릭
 #     driver.implicitly_wait(60 * 20)
 #     waitLoading()
 
@@ -116,25 +115,32 @@ def archive(driver, logFile, row):
     # 팝업 창으로
     driver.switch_to.window(driver.window_handles[1])
     
+    fRO = searchFileName("RO", row)
+    sRO = "claim invoice"
 
-    fBL = inputFunctions.searchFileName("BL", row)
+    fBL = searchFileName("BL", row)
     sBL = "B/L"
-    
-    fLiabilityNotice = inputFunctions.searchFileName("LIABILITY NOTICE", row)
-    sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
-    
-    fPicture = inputFunctions.searchFileName("PICTURE", row)
+
+    fPicture = searchFileName("PICTURE", row)
     sPicture = "Pictures vehicle damage"
 
-    fInvoice = inputFunctions.searchFileName("INVOICE", row)
-    sInvoice = "Invoice of goods"
-    
-    fRO = inputFunctions.searchFileName("RO", row)
-    sRO = "claim invoice"
-    
-    fileList = [fBL, fLiabilityNotice, fPicture, fInvoice, fRO]
-    selectionList = [sBL, sLiabilityNotice, sPicture, sInvoice, sRO]
-    
+    fLiabilityNotice = searchFileName("LIABILITY NOTICE", row)
+    sLiabilityNotice = "notice of liability, resp. objection to notice of liability"
+
+    ## damage report는 업로드 안함 (폴더가 비어있음)
+
+    fClaimSummary = searchFileName("CLAIM SUMMARY", row)
+    sClaimSummary = "Notification of the claim"
+
+    fEmail = searchEmail(row)
+    sEmail = "Incoming correspondence from claimant"
+
+    fList = searchFileName("LIST", row) # 얘만 list 아님
+    sList = "Incoming correspondence from claimant"
+
+    fileList = [fRO, fBL, fPicture, fLiabilityNotice, fClaimSummary, fEmail, fList]
+    selectionList = [sRO, sBL, sPicture, sLiabilityNotice, sClaimSummary, sEmail, sList]
+
     uploadArchive(driver, logFile, fileList, selectionList)
 
     # Claim summary = notification of the claim
@@ -225,7 +231,7 @@ def receipts(driver, row):
     time.sleep(0.5)
 
     # date of receipt
-    receiptYear = row["Closing Date"][0:3]
+    receiptYear = row["Closing Date"][0:4]
     receiptMonth = row["Closing Date"][5:7]
     receiptDay = row["Closing Date"][-2:]
 
@@ -337,6 +343,7 @@ def login(driver, id, password):
 
 def clickClaim(driver):
     # claim 버튼 클릭
+    # driver.find_element(by=By.XPATH, value='/html/body/table/tbody/tr[1]/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[1]/a').click()
     driver.find_element(by=By.LINK_TEXT, value="CLAIM").click()
 
 def uploadFileNumCheck(fileList):
@@ -356,28 +363,28 @@ def uploadedFileNumCheck(driver):
 def memo(file_name, row, msg, archiveError=False):
 
     # 엑셀 파일 오픈
-    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./upload/{file_name}")
 
     # 시트 설정
     sheet = wb.worksheets[0]
-    sheet.cell(row = 1 + int(row["No."]), column = 23).value = msg
+    sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
 
     
     # Memo 작성
     if row == 0:
-        sheet.cell(row = 1, column = 24).value = msg
+        sheet.cell(row = 5, column = 24).value = msg
     else:
         # cid값 저장
-        sheet.cell(row = 1 + int(row["No."]), column = 23).value = msg
+        sheet.cell(row = 5 + int(row["No."]), column = 24).value = msg
 
 
     # archiveError가 있는 경우 Memo 옆에 표시해둠
     if archiveError:
         print("Archive Error Memo")
-        sheet.cell(row = 1 + int(row["No."]), column = 24).value = "Upload Error"
+        sheet.cell(row = 5 + int(row["No."]), column = 25).value = "Upload Error"
 
     # 파일 저장 후 닫기
-    wb.save(f"./UserFiles/upload/{file_name}")
+    wb.save(f"./upload/{file_name}")
     wb.close()
 
 def writeLog(logFile, msg):
@@ -452,21 +459,21 @@ def getCid(file_name, driver, row):
     cid = line[-7:]
 
     # 엑셀 파일 오픈
-    wb = openpyxl.load_workbook(f"./UserFiles/upload/{file_name}")
+    wb = openpyxl.load_workbook(f"./upload/{file_name}")
 
     # 시트 설정
     sheet = wb.worksheets[0]
 
     # cid값 저장
-    sheet.cell(row = 1 + int(row["No."]), column = 22).value = cid
+    sheet.cell(row = 5 + int(row["No."]), column = 23).value = cid
 
     # 파일 저장 후 닫기
-    wb.save(f"./UserFiles/upload/{file_name}")
+    wb.save(f"./upload/{file_name}")
     wb.close()
 
-def uploadArchive(driver, logFile, fileList, selectionList):
+def uploadArchive(driver,logFile, fileList, selectionList):
     div = 1
-    for i in range(0, 5):
+    for i in range(0, 7):
         for file in fileList[i]:
             writeLog(logFile, file)
 
@@ -498,7 +505,7 @@ def uploadArchive(driver, logFile, fileList, selectionList):
             pyautogui.press("enter")
             waitLoading()
 
-    # upload 버튼 클릭
+
     driver.find_element(by=By.XPATH, value='//*[@id="actions"]/div[1]/button[1]').click()
 
     driver.implicitly_wait(5)
